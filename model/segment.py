@@ -47,8 +47,3 @@ class SegmentTags(Enum):
     flag3 = 7
     flag4 = 8
     payload = 9
-
-
-class PayloadTypes(Enum):
-    seismic = 1
-    temp_and_hum = 2
