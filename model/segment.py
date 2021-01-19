@@ -1,4 +1,5 @@
-from model import seismic_payload, temperature_payload
+from constants import PayloadTypes
+from model import seismic_payload, temperature_payload, ultrasound_payload
 from enum import Enum
 from datetime import datetime
 
@@ -21,6 +22,8 @@ class Segment:
             return seismic_payload.SeismicPayload(**payload)
         elif payload_type == PayloadTypes.temp_and_hum.name:
             return temperature_payload.TemperaturePayload(seg_date, **payload)
+        elif payload_type == PayloadTypes.ultrasound:
+            return ultrasound_payload.UltrasoundPayload(**payload)
 
     def to_dict(self):
         return {
